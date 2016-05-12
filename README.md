@@ -1,2 +1,2 @@
 # Web server and browser  
-Local exchange through a socket between server and browser.  
+Local data exchange between server and browser.  
