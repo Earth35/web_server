@@ -7,7 +7,7 @@ class Browser
     @port = 3000
     @get_path = "./index.html"
     @post_path = "./thanks.html"
-    @user_agent = "SimpleBrowser 1.0"
+    @user_agent = "SimpleBrowser/1.0"
   end
   
   def send_request
@@ -38,8 +38,8 @@ class Browser
     from = user_data[:viking][:email]
     body = user_data.to_json
     initial_line = "POST #{@post_path} HTTP/1.0\r\n"
-    headers = "From: #{from}\r\n" + "User-Agent: #{@user_agent}\r\n" + "Content-Type: application/x-www-form-urlencoded\r\n" + "Content-Length: #{body.bytesize} bytes\r\n"
-    request = initial_line + headers + body + "\r\n"
+    headers = "From: #{from}\r\n" + "User-Agent: #{@user_agent}\r\n" + "Content-Type: JSON\r\n" + "Content-Length: #{body.bytesize}\r\n"
+    request = initial_line + headers + "\r\n" + body
     socket = TCPSocket.open(@host, @port)
     socket.print(request)
     get_response(socket)

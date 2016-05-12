@@ -1,0 +1,7 @@
+POST ./thanks.html HTTP/1.0
+From: er@er.er
+User-Agent: SimpleBrowser/1.0
+Content-Type: JSON
+Content-Length: 43 bytes
+
+{"viking":{"name":"Er","email":"er@er.er"}}
